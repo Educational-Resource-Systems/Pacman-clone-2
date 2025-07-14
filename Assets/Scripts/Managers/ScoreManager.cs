@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour {
-
-    private string TopScoresURL = "http://ilbeyli.byethost18.com/pacman/topscores.php";
+public class ScoreManager : MonoBehaviour
+{
+    private string TopScoresURL = "https://ers-dev.com/ERS/_pacman/topscores.php";
     private string username;
-    private int _highscore;
-    private int _lowestHigh;
+    private int _highscore = 99999;
+    private int _lowestHigh = 99999;
     private bool _scoresRead;
     private bool _isTableFound;
 
@@ -35,109 +34,162 @@ public class ScoreManager : MonoBehaviour {
 
     void OnLevelWasLoaded(int level)
     {
-        //StartCoroutine("ReadScoresFromDB");
+        if (level == 2) // Scores scene
+        {
+            // Automatically submit score
+            string playerName = PlayerPrefs.GetString("PlayerName", "");
+            string playerEmail = PlayerPrefs.GetString("PlayerEmail", "");
+            int playerScore = PlayerPrefs.GetInt("PlayerScore", 0);
 
-        if (level == 2) StartCoroutine("UpdateGUIText");    // if scores is loaded
-        if (level == 1) _lowestHigh = _highscore = 99999;
-        //if (level == 1) StartCoroutine("GetHighestScore");  // if game is loaded
+            if (!string.IsNullOrEmpty(playerName) && !string.IsNullOrEmpty(playerEmail))
+            {
+                StartCoroutine(SubmitScore(playerName, playerEmail, playerScore));
+            }
+            else
+            {
+                Debug.LogError("Name or email not found in PlayerPrefs!");
+                StartCoroutine(UpdateGUIText()); // Show scores anyway
+            }
+        }
+        if (level == 1) // Game scene
+        {
+            _lowestHigh = _highscore = 99999;
+            StartCoroutine(GetHighestScore());
+        }
+    }
+
+    public IEnumerator SubmitScore(string playerName, string email, int score)
+    {
+        // Create form for POST request
+        WWWForm form = new WWWForm();
+        form.AddField("player_name", playerName);
+        form.AddField("email", email);
+        form.AddField("score", score);
+
+        WWW submitRequest = new WWW(TopScoresURL, form);
+        yield return submitRequest;
+
+        if (submitRequest.error != null)
+        {
+            Debug.LogError(string.Format("ERROR SUBMITTING SCORE: {0}", submitRequest.error));
+        }
+        else
+        {
+            string responseText = submitRequest.text;
+            Debug.Log(string.Format("Server response: {0}", responseText));
+
+            if (responseText == "Score saved successfully")
+            {
+                Debug.Log("Score submitted successfully!");
+                // Clear PlayerPrefs to prevent resubmission
+                PlayerPrefs.DeleteKey("PlayerName");
+                PlayerPrefs.DeleteKey("PlayerEmail");
+                PlayerPrefs.DeleteKey("PlayerScore");
+                PlayerPrefs.Save();
+            }
+            else
+            {
+                Debug.LogError(string.Format("Server error: {0}", responseText));
+            }
+        }
+
+        // Always refresh high scores
+        yield return StartCoroutine(ReadScoresFromDB());
+        yield return StartCoroutine(UpdateGUIText());
     }
 
     IEnumerator GetHighestScore()
     {
         Debug.Log("GETTING HIGHEST SCORE");
-        // wait until scores are pulled from database
-        float timeOut = Time.time + 4;
-        while (!_scoresRead)
-        {
-            yield return new WaitForSeconds(0.01f);
-            if (Time.time > timeOut)
-            {
-                Debug.Log("Timed out");
-                //scoreList.Clear();
-                //scoreList.Add(new Score("GetHighestScore:: DATABASE CONNECTION TIMED OUT", -1));
-                break;
-            }
-        }
+        yield return StartCoroutine(ReadScoresFromDB());
 
-        _highscore = scoreList[0].score;
-        _lowestHigh = scoreList[scoreList.Count - 1].score;
+        if (scoreList.Count > 0)
+        {
+            _highscore = scoreList[0].score;
+            _lowestHigh = scoreList[scoreList.Count - 1].score;
+        }
     }
 
     IEnumerator UpdateGUIText()
     {
-        /*
-        // wait until scores are pulled from database
-        float timeOut = Time.time + 4;
-        while (!_scoresRead)
+        yield return StartCoroutine(ReadScoresFromDB());
+
+        if (scoreList.Count == 0)
         {
-            yield return new WaitForSeconds(0.01f);
-            if (Time.time > timeOut)
-            {   
-                //Debug.Log("TIMEOUT!");
-                scoreList.Clear();
-                scoreList.Add(new Score("DATABASE TEMPORARILY UNAVAILABLE", 999999));
-                break;
+            scoreList.Add(new Score("DATABASE TEMPORARILY UNAVAILABLE", 999999));
+        }
+
+        GameObject scoresTextObject = GameObject.FindGameObjectWithTag("ScoresText");
+        if (scoresTextObject != null)
+        {
+            Scores scoresComponent = scoresTextObject.GetComponent<Scores>();
+            if (scoresComponent != null)
+            {
+                scoresComponent.UpdateGUIText(scoreList);
+            }
+            else
+            {
+                Debug.LogError("Scores component not found on ScoresText object!");
             }
         }
-        */
-        scoreList.Clear();
-        scoreList.Add(new Score("DATABASE TEMPORARILY UNAVAILABLE", 999999));
-
-        GameObject.FindGameObjectWithTag("ScoresText").GetComponent<Scores>().UpdateGUIText(scoreList);
-        yield return new WaitForSeconds(0f);
+        else
+        {
+            Debug.LogError("ScoresText object not found!");
+        }
     }
 
     IEnumerator ReadScoresFromDB()
     {
-        WWW GetScoresAttempt = new WWW(TopScoresURL);
-        yield return GetScoresAttempt;
+        WWW getScoresAttempt = new WWW(TopScoresURL);
+        yield return getScoresAttempt;
 
-        if (GetScoresAttempt.error != null)
+        if (getScoresAttempt.error != null)
         {
-            Debug.Log(string.Format("ERROR GETTING SCORES: {0}", GetScoresAttempt.error));
-            scoreList.Add(new Score(GetScoresAttempt.error, 1234));
-            StartCoroutine(UpdateGUIText());
+            Debug.LogError(string.Format("ERROR GETTING SCORES: {0}", getScoresAttempt.error));
+            scoreList.Add(new Score(getScoresAttempt.error, 1234));
+            yield return StartCoroutine(UpdateGUIText());
         }
         else
         {
-            // ATTENTION: assumes query will find table
+            string[] textlist = getScoresAttempt.text.Split(new string[] { "\n", "\t" }, StringSplitOptions.RemoveEmptyEntries);
 
-            string[] textlist = GetScoresAttempt.text.Split(new string[] { "\n", "\t" },
-                StringSplitOptions.RemoveEmptyEntries);
-
-            if (textlist.Length == 1)
+            if (textlist.Length <= 1)
             {
-                //`Debug.Log("== 1");
                 scoreList.Clear();
                 scoreList.Add(new Score(textlist[0], -123));
-                yield return null;
             }
             else
             {
+                scoreList.Clear();
+                string[] names = new string[Mathf.FloorToInt(textlist.Length / 2)];
+                string[] scores = new string[names.Length];
 
-
-                string[] Names = new string[Mathf.FloorToInt(textlist.Length/2)];
-                string[] Scores = new string[Names.Length];
-
-                //Debug.Log("Textlist length: " + textlist.Length + " DATA: " + textlist[0]);
                 for (int i = 0; i < textlist.Length; i++)
                 {
-                    if (i%2 == 0)
+                    if (i % 2 == 0)
                     {
-                        Names[Mathf.FloorToInt(i/2)] = textlist[i];
+                        names[Mathf.FloorToInt(i / 2)] = textlist[i];
                     }
-                    else Scores[Mathf.FloorToInt(i/2)] = textlist[i];
+                    else
+                    {
+                        scores[Mathf.FloorToInt(i / 2)] = textlist[i];
+                    }
                 }
 
-                for (int i = 0; i < Names.Length; i++)
+                for (int i = 0; i < names.Length; i++)
                 {
-                    scoreList.Add(new Score(Names[i], Scores[i]));
+                    try
+                    {
+                        scoreList.Add(new Score(names[i], scores[i]));
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError(string.Format("Error parsing score: {0}", e.Message));
+                    }
                 }
-
                 _scoresRead = true;
             }
         }
-
     }
 
     public int High()
