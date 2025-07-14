@@ -11,24 +11,28 @@ public class NameToTitle : MonoBehaviour {
 	{
 		switch(name)
 		{
-		case "Pac-Man":
+		case "Runner":
+			title.color = new Color(48f/255f, 185f/255f, 236f/255f);
+			break;
+
+		case "Blanko":
+			// red YELLOW
 			title.color = Color.yellow;
 			break;
 
-		case "Blinky":
-			title.color = Color.red;
+		case "Fizzle":
+			// pink POWDER
+			title.color = new Color(200f/255f, 214f/255f, 235f/255f);
 			break;
 
-		case "Pinky":
-			title.color = new Color(254f/255f, 152f/255f, 203f/255f);
+		case "Misalingo":
+			//blue TEAL
+			title.color = new Color(153f/255f, 186f/255f, 169f/255f);
 			break;
 
-		case "Inky":
-			title.color = Color.cyan;
-			break;
-
-		case "Clyde":
-			title.color = new Color(254f/255f, 203f/255f, 51f/255f);
+		case "Clutterbug":
+			//yellow CORAL
+			title.color = new Color(221f/255f, 182f/255f, 139f/255f);
 			break;
 		}
 		
@@ -37,7 +41,7 @@ public class NameToTitle : MonoBehaviour {
 
 	void OnMouseExit()
 	{
-		title.text = "Pac-Man Clone";
+		title.text = "Dose Runner";
 		title.color = Color.white;
 	}
 }
