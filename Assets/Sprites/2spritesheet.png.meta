@@ -1,0 +1,2466 @@
+fileFormatVersion: 2
+guid: e6ad3ed1bf2765a4c9ae26f1c445d7b7
+timeCreated: 1752506223
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 2spritesheet_0
+    21300002: 2spritesheet_1
+    21300004: 2spritesheet_2
+    21300006: 2spritesheet_3
+    21300008: 2spritesheet_4
+    21300010: 2spritesheet_5
+    21300012: 2spritesheet_6
+    21300014: 2spritesheet_7
+    21300016: 2spritesheet_8
+    21300018: 2spritesheet_9
+    21300020: 2spritesheet_10
+    21300022: 2spritesheet_11
+    21300024: 2spritesheet_12
+    21300026: 2spritesheet_13
+    21300028: 2spritesheet_14
+    21300030: 2spritesheet_15
+    21300032: 2spritesheet_16
+    21300034: 2spritesheet_17
+    21300036: 2spritesheet_18
+    21300038: 2spritesheet_19
+    21300040: 2spritesheet_20
+    21300042: 2spritesheet_21
+    21300044: 2spritesheet_22
+    21300046: 2spritesheet_23
+    21300048: 2spritesheet_24
+    21300050: 2spritesheet_25
+    21300052: 2spritesheet_26
+    21300054: 2spritesheet_27
+    21300056: 2spritesheet_28
+    21300058: 2spritesheet_29
+    21300060: 2spritesheet_30
+    21300062: 2spritesheet_31
+    21300064: 2spritesheet_32
+    21300066: 2spritesheet_33
+    21300068: 2spritesheet_34
+    21300070: 2spritesheet_35
+    21300072: 2spritesheet_36
+    21300074: 2spritesheet_37
+    21300076: 2spritesheet_38
+    21300078: 2spritesheet_39
+    21300080: 2spritesheet_40
+    21300082: 2spritesheet_41
+    21300084: 2spritesheet_42
+    21300086: 2spritesheet_43
+    21300088: 2spritesheet_44
+    21300090: 2spritesheet_45
+    21300092: 2spritesheet_46
+    21300094: 2spritesheet_47
+    21300096: 2spritesheet_48
+    21300098: 2spritesheet_49
+    21300100: 2spritesheet_50
+    21300102: 2spritesheet_51
+    21300104: 2spritesheet_52
+    21300106: 2spritesheet_53
+    21300108: 2spritesheet_54
+    21300110: 2spritesheet_55
+    21300112: 2spritesheet_56
+    21300114: 2spritesheet_57
+    21300116: 2spritesheet_58
+    21300118: 2spritesheet_59
+    21300120: 2spritesheet_60
+    21300122: 2spritesheet_61
+    21300124: 2spritesheet_62
+    21300126: 2spritesheet_63
+    21300128: 2spritesheet_64
+    21300130: 2spritesheet_65
+    21300132: 2spritesheet_66
+    21300134: 2spritesheet_67
+    21300136: 2spritesheet_68
+    21300138: 2spritesheet_69
+    21300140: 2spritesheet_70
+    21300142: 2spritesheet_71
+    21300144: 2spritesheet_72
+    21300146: 2spritesheet_73
+    21300148: 2spritesheet_74
+    21300150: 2spritesheet_75
+    21300152: 2spritesheet_76
+    21300154: 2spritesheet_77
+    21300156: 2spritesheet_78
+    21300158: 2spritesheet_79
+    21300160: 2spritesheet_80
+    21300162: 2spritesheet_81
+    21300164: 2spritesheet_82
+    21300166: 2spritesheet_83
+    21300168: 2spritesheet_84
+    21300170: 2spritesheet_85
+    21300172: 2spritesheet_86
+    21300174: 2spritesheet_87
+    21300176: 2spritesheet_88
+    21300178: 2spritesheet_89
+    21300180: 2spritesheet_90
+    21300182: 2spritesheet_91
+    21300184: 2spritesheet_92
+    21300186: 2spritesheet_93
+    21300188: 2spritesheet_94
+    21300190: 2spritesheet_95
+    21300192: 2spritesheet_96
+    21300194: 2spritesheet_97
+    21300196: 2spritesheet_98
+    21300198: 2spritesheet_99
+    21300200: 2spritesheet_100
+    21300202: 2spritesheet_101
+    21300204: 2spritesheet_102
+    21300206: 2spritesheet_103
+    21300208: 2spritesheet_104
+    21300210: 2spritesheet_105
+    21300212: 2spritesheet_106
+    21300214: 2spritesheet_107
+    21300216: 2spritesheet_108
+    21300218: 2spritesheet_109
+    21300220: 2spritesheet_110
+    21300222: 2spritesheet_111
+    21300224: 2spritesheet_112
+    21300226: 2spritesheet_113
+    21300228: 2spritesheet_114
+    21300230: 2spritesheet_115
+    21300232: 2spritesheet_116
+    21300234: 2spritesheet_117
+    21300236: 2spritesheet_118
+    21300238: 2spritesheet_119
+    21300240: 2spritesheet_120
+    21300242: 2spritesheet_121
+    21300244: 2spritesheet_122
+    21300246: 2spritesheet_123
+    21300248: 2spritesheet_124
+    21300250: 2spritesheet_125
+    21300252: 2spritesheet_126
+    21300254: 2spritesheet_127
+    21300256: 2spritesheet_128
+    21300258: 2spritesheet_129
+    21300260: 2spritesheet_130
+    21300262: 2spritesheet_131
+    21300264: 2spritesheet_132
+    21300266: 2spritesheet_133
+    21300268: 2spritesheet_134
+    21300270: 2spritesheet_135
+    21300272: 2spritesheet_136
+    21300274: 2spritesheet_137
+    21300276: 2spritesheet_138
+    21300278: 2spritesheet_139
+    21300280: 2spritesheet_140
+    21300282: 2spritesheet_141
+    21300284: 2spritesheet_142
+    21300286: 2spritesheet_143
+    21300288: 2spritesheet_144
+    21300290: 2spritesheet_145
+    21300292: 2spritesheet_146
+    21300294: 2spritesheet_147
+    21300296: 2spritesheet_148
+    21300298: 2spritesheet_149
+    21300300: 2spritesheet_150
+    21300302: 2spritesheet_151
+    21300304: 2spritesheet_152
+    21300306: 2spritesheet_153
+    21300308: 2spritesheet_154
+    21300310: 2spritesheet_155
+    21300312: 2spritesheet_156
+    21300314: 2spritesheet_157
+    21300316: 2spritesheet_158
+    21300318: 2spritesheet_159
+    21300320: 2spritesheet_160
+    21300322: 2spritesheet_161
+    21300324: 2spritesheet_162
+    21300326: 2spritesheet_163
+    21300328: 2spritesheet_164
+    21300330: 2spritesheet_165
+    21300332: 2spritesheet_166
+    21300334: 2spritesheet_167
+    21300336: 2spritesheet_168
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 8
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 1024
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 264
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 264
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 264
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 263
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 263
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 263
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 267
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 267
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 271
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 271
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 271
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 271
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 271
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 271
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 246
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 6
+        width: 464
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 244
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 244
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 243
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 243
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 241
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 247
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 247
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 247
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 224
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 224
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 223
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 223
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 223
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 227
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 227
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 227
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 206
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 205
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 209
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 205
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 207
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 203
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 207
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 207
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_40
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 207
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_41
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 201
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_42
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 201
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_43
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 201
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_44
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 183
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_45
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 183
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_46
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 183
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_47
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 183
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_48
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 183
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_49
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 183
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_50
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 183
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_51
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 183
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_52
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 187
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_53
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 187
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_54
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 187
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_55
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 191
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_56
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 191
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_57
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 191
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_58
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 166
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_59
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 163
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_60
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 163
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_61
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 163
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_62
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 163
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_63
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 163
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_64
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 163
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_65
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 163
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_66
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 163
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_67
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 167
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_68
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 167
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_69
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 167
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_70
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 167
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_71
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 165
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_72
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 166
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_73
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_74
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_75
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_76
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_77
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_78
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_79
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_80
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_81
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 143
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_82
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 147
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_83
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 147
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_84
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 147
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_85
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 147
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_86
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 123
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_87
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 123
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_88
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 123
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_89
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 123
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_90
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 123
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_91
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 123
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_92
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 123
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_93
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 123
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_94
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 127
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_95
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 127
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_96
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 127
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_97
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 127
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_98
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 103
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_99
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 103
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_100
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 103
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_101
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 103
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_102
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 105
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_103
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 103
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_104
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 103
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_105
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 104
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_106
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 103
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_107
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 90
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_108
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_109
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 91
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_110
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_111
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_112
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_113
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_114
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_115
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_116
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_117
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 91
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_118
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 83
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_119
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 84
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_120
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 84
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_121
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 81
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_122
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 81
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_123
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 81
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_124
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 81
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_125
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 81
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_126
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 81
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_127
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 81
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_128
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 81
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_129
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 71
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_130
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 71
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_131
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 68
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_132
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 68
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_133
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 68
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_134
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 68
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_135
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 68
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_136
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 68
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_137
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 63
+        width: 21
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_138
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 64
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_139
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 64
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_140
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 47
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_141
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 47
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_142
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 47
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_143
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 47
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_144
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 47
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_145
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 47
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_146
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 47
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_147
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 47
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_148
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 47
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_149
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 47
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_150
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 47
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_151
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 47
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_152
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 43
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_153
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 43
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_154
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 44
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_155
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 22
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_156
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 26
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_157
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 26
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_158
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 26
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_159
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 26
+        width: 15
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_160
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 25
+        width: 15
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_161
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 24
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_162
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 23
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_163
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 23
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_164
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 23
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_165
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 7
+        width: 21
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_166
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 7
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_167
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 7
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 2spritesheet_168
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 7
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
