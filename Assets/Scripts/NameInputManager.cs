@@ -4,43 +4,60 @@ using UnityEngine.SceneManagement;
 
 public class NameInputManager : MonoBehaviour
 {
-	public InputField nameInputField;   // Assign in Inspector
-	public InputField emailInputField;  // Assign in Inspector
-	public Button submitButton;         // Assign in Inspector
+	public InputField nameInputField; // Assign in Inspector
+	public InputField emailInputField; // Assign in Inspector
+	public Button submitButton; // Assign in Inspector
+	public Text feedbackText; // Optional: Assign for feedback
 
 	void Start()
 	{
-		submitButton.onClick.AddListener(OnSubmit);
+		submitButton.onClick.AddListener(SubmitPlayerInfo);
 	}
 
-	void OnSubmit()
+	void SubmitPlayerInfo()
 	{
-		string playerName = nameInputField.text.Trim();
-		string playerEmail = emailInputField.text.Trim();
+		string playerName = nameInputField.text;
+		string playerEmail = emailInputField.text;
 
-		if (!string.IsNullOrEmpty(playerName) && IsValidEmail(playerEmail))
+		if (string.IsNullOrEmpty(playerName) || string.IsNullOrEmpty(playerEmail))
 		{
-			// Save name and email to PlayerPrefs
-			PlayerPrefs.SetString("PlayerName", playerName);
-			PlayerPrefs.SetString("PlayerEmail", playerEmail);
-			PlayerPrefs.Save();
-			// Load the main game scene
-			SceneManager.LoadScene("menu"); // Replace with your game scene name
+			if (feedbackText != null)
+				feedbackText.text = "Please enter both name and email.";
+			Debug.LogWarning("Name and email are required!");
+			return;
 		}
-		else
+
+		if (!IsValidEmail(playerEmail))
 		{
-			Debug.LogWarning("Please enter a valid name and email!");
-			// Optionally add UI feedback
+			if (feedbackText != null)
+				feedbackText.text = "Please enter a valid email.";
+			Debug.LogWarning("Invalid email format!");
+			return;
 		}
+
+		// Store name and email in PlayerPrefs
+		PlayerPrefs.SetString("PlayerName", playerName);
+		PlayerPrefs.SetString("PlayerEmail", playerEmail);
+		PlayerPrefs.Save();
+
+		if (feedbackText != null)
+			feedbackText.text = "Info saved! Loading menu...";
+		Debug.Log(string.Format("Saved name: {0}, email: {1}", playerName, playerEmail)); // Replaced interpolated string
+
+		// Load Menu scene
+		SceneManager.LoadScene("Menu");
 	}
 
-	// Basic email validation
-	private bool IsValidEmail(string email)
+	bool IsValidEmail(string email)
 	{
-		if (string.IsNullOrEmpty(email))
+		try
+		{
+			var addr = new System.Net.Mail.MailAddress(email);
+			return addr.Address == email;
+		}
+		catch
+		{
 			return false;
-
-		// Simple check for @ and . characters
-		return email.Contains("@") && email.Contains(".") && email.Length > 5;
+		}
 	}
 }
