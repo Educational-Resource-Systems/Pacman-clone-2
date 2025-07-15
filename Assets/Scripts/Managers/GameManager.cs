@@ -23,8 +23,9 @@ public class GameManager : MonoBehaviour
 	private float _timeToCalm;
 	public float SpeedPerLevel;
 
-	public AudioClip beginningSound; // Assign pacman_beginning.wav in Inspector
-	private AudioSource audioSource; // Added for sound playback
+	public AudioClip beginningSound;
+	public AudioClip chompSound; // Added for pacman_chomp.wav
+	private AudioSource audioSource;
 
 	private static GameManager _instance;
 
@@ -55,8 +56,8 @@ public class GameManager : MonoBehaviour
 		}
 
 		AssignGhosts();
-		audioSource = gameObject.AddComponent<AudioSource>(); // Add AudioSource
-		audioSource.playOnAwake = false; // Prevent auto-play
+		audioSource = gameObject.AddComponent<AudioSource>();
+		audioSource.playOnAwake = false;
 	}
 
 	void Start()
@@ -78,7 +79,6 @@ public class GameManager : MonoBehaviour
 		inky.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
 		pacman.GetComponent<PlayerController>().speed += Level * SpeedPerLevel / 2;
 
-		// Play beginning sound for game scene (level 1)
 		if (SceneManager.GetActiveScene().buildIndex == 3 && beginningSound != null)
 		{
 			audioSource.PlayOneShot(beginningSound);
@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour
 			Debug.Log("Game Over! Saving score: " + score);
 			PlayerPrefs.SetInt("PlayerScore", score);
 			PlayerPrefs.Save();
-			score = 0; // Reset score after Game Over
+			score = 0;
 			gameState = GameState.Scores;
 			SceneManager.LoadScene("Scores");
 		}
@@ -191,5 +191,13 @@ public class GameManager : MonoBehaviour
 		Level = 0;
 		lives = 3;
 		Destroy(GameObject.Find("Game Manager"));
+	}
+
+	public void PlayChompSound()
+	{
+		if (chompSound != null)
+		{
+			audioSource.PlayOneShot(chompSound);
+		}
 	}
 }

@@ -1,20 +1,28 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class Pacdot : MonoBehaviour {
+public class Pacdot : MonoBehaviour
+{
+	private GameManager GM; // Reference to GameManager
+
+	void Start()
+	{
+		GM = GameObject.Find("Game Manager").GetComponent<GameManager>(); // Get GameManager
+	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if(other.name == "pacman")
+		if (other.name == "pacman")
 		{
 			GameManager.score += 10;
-		    GameObject[] pacdots = GameObject.FindGameObjectsWithTag("pacdot");
-            Destroy(gameObject);
+			GameObject[] pacdots = GameObject.FindGameObjectsWithTag("pacdot");
+			Destroy(gameObject);
 
-		    if (pacdots.Length == 1)
-		    {
-		        GameObject.FindObjectOfType<GameGUINavigation>().LoadLevel();
-		    }
+			GM.PlayChompSound(); // Play chomp sound via GameManager
+
+			if (pacdots.Length == 1)
+			{
+				GameObject.FindObjectOfType<GameGUINavigation>().LoadLevel();
+			}
 		}
 	}
 }
