@@ -4,184 +4,183 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static int Level = 0;
-    public static int lives = 3;
+	public static int Level = 0;
+	public static int lives = 3;
+	public static int score; // Score persists across scenes but should reset after Game Over
 
-    public enum GameState { Init, Game, Dead, Scores }
-    public static GameState gameState;
+	public enum GameState { Init, Game, Dead, Scores }
+	public static GameState gameState;
 
-    private GameObject pacman;
-    private GameObject blinky;
-    private GameObject pinky;
-    private GameObject inky;
-    private GameObject clyde;
-    private GameGUINavigation gui;
+	private GameObject pacman;
+	private GameObject blinky;
+	private GameObject pinky;
+	private GameObject inky;
+	private GameObject clyde;
+	private GameGUINavigation gui;
 
-    public static bool scared;
-    public static int score;
+	public static bool scared;
+	public float scareLength;
+	private float _timeToCalm;
+	public float SpeedPerLevel;
 
-    public float scareLength;
-    private float _timeToCalm;
+	private static GameManager _instance;
 
-    public float SpeedPerLevel;
+	public static GameManager instance
+	{
+		get
+		{
+			if (_instance == null)
+			{
+				_instance = GameObject.FindObjectOfType<GameManager>();
+				DontDestroyOnLoad(_instance.gameObject);
+			}
+			return _instance;
+		}
+	}
 
-    private static GameManager _instance;
+	void Awake()
+	{
+		if (_instance == null)
+		{
+			_instance = this;
+			DontDestroyOnLoad(this);
+		}
+		else
+		{
+			if (this != _instance)
+				Destroy(this.gameObject);
+		}
 
-    public static GameManager instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = GameObject.FindObjectOfType<GameManager>();
-                DontDestroyOnLoad(_instance.gameObject);
-            }
-            return _instance;
-        }
-    }
+		AssignGhosts();
+	}
 
-    void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            if (this != _instance)
-                Destroy(this.gameObject);
-        }
+	void Start()
+	{
+		gameState = GameState.Init;
+	}
 
-        AssignGhosts();
-    }
+	void OnLevelWasLoaded()
+	{
+		if (Level == 0) lives = 3;
 
-    void Start()
-    {
-        gameState = GameState.Init;
-    }
+		Debug.Log("Level " + Level + " Loaded!");
+		AssignGhosts();
+		ResetVariables();
 
-    void OnLevelWasLoaded()
-    {
-        if (Level == 0) lives = 3;
+		clyde.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
+		blinky.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
+		pinky.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
+		inky.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
+		pacman.GetComponent<PlayerController>().speed += Level * SpeedPerLevel / 2;
+	}
 
-        Debug.Log("Level " + Level + " Loaded!");
-        AssignGhosts();
-        ResetVariables();
+	private void ResetVariables()
+	{
+		_timeToCalm = 0.0f;
+		scared = false;
+		PlayerController.killstreak = 0;
+	}
 
-        clyde.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
-        blinky.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
-        pinky.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
-        inky.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
-        pacman.GetComponent<PlayerController>().speed += Level * SpeedPerLevel / 2;
-    }
+	void Update()
+	{
+		if (scared && _timeToCalm <= Time.time)
+			CalmGhosts();
+	}
 
-    private void ResetVariables()
-    {
-        _timeToCalm = 0.0f;
-        scared = false;
-        PlayerController.killstreak = 0;
-    }
+	public void ResetScene()
+	{
+		CalmGhosts();
 
-    void Update()
-    {
-        if (scared && _timeToCalm <= Time.time)
-            CalmGhosts();
-    }
+		pacman.transform.position = new Vector3(15f, 11f, 0f);
+		blinky.transform.position = new Vector3(15f, 20f, 0f);
+		pinky.transform.position = new Vector3(14.5f, 17f, 0f);
+		inky.transform.position = new Vector3(16.5f, 17f, 0f);
+		clyde.transform.position = new Vector3(12.5f, 17f, 0f);
 
-    public void ResetScene()
-    {
-        CalmGhosts();
+		pacman.GetComponent<PlayerController>().ResetDestination();
+		blinky.GetComponent<GhostMove>().InitializeGhost();
+		pinky.GetComponent<GhostMove>().InitializeGhost();
+		inky.GetComponent<GhostMove>().InitializeGhost();
+		clyde.GetComponent<GhostMove>().InitializeGhost();
 
-        pacman.transform.position = new Vector3(15f, 11f, 0f);
-        blinky.transform.position = new Vector3(15f, 20f, 0f);
-        pinky.transform.position = new Vector3(14.5f, 17f, 0f);
-        inky.transform.position = new Vector3(16.5f, 17f, 0f);
-        clyde.transform.position = new Vector3(12.5f, 17f, 0f);
+		gameState = GameState.Init;
+		gui.H_ShowReadyScreen();
+	}
 
-        pacman.GetComponent<PlayerController>().ResetDestination();
-        blinky.GetComponent<GhostMove>().InitializeGhost();
-        pinky.GetComponent<GhostMove>().InitializeGhost();
-        inky.GetComponent<GhostMove>().InitializeGhost();
-        clyde.GetComponent<GhostMove>().InitializeGhost();
+	public void ToggleScare()
+	{
+		if (!scared) ScareGhosts();
+		else CalmGhosts();
+	}
 
-        gameState = GameState.Init;
-        gui.H_ShowReadyScreen();
-    }
+	public void ScareGhosts()
+	{
+		scared = true;
+		blinky.GetComponent<GhostMove>().Frighten();
+		pinky.GetComponent<GhostMove>().Frighten();
+		inky.GetComponent<GhostMove>().Frighten();
+		clyde.GetComponent<GhostMove>().Frighten();
+		_timeToCalm = Time.time + scareLength;
 
-    public void ToggleScare()
-    {
-        if (!scared) ScareGhosts();
-        else CalmGhosts();
-    }
+		Debug.Log("Ghosts Scared");
+	}
 
-    public void ScareGhosts()
-    {
-        scared = true;
-        blinky.GetComponent<GhostMove>().Frighten();
-        pinky.GetComponent<GhostMove>().Frighten();
-        inky.GetComponent<GhostMove>().Frighten();
-        clyde.GetComponent<GhostMove>().Frighten();
-        _timeToCalm = Time.time + scareLength;
+	public void CalmGhosts()
+	{
+		scared = false;
+		blinky.GetComponent<GhostMove>().Calm();
+		pinky.GetComponent<GhostMove>().Calm();
+		inky.GetComponent<GhostMove>().Calm();
+		clyde.GetComponent<GhostMove>().Calm();
+		PlayerController.killstreak = 0;
+	}
 
-        Debug.Log("Ghosts Scared");
-    }
+	void AssignGhosts()
+	{
+		clyde = GameObject.Find("clyde");
+		pinky = GameObject.Find("pinky");
+		inky = GameObject.Find("inky");
+		blinky = GameObject.Find("blinky");
+		pacman = GameObject.Find("pacman");
 
-    public void CalmGhosts()
-    {
-        scared = false;
-        blinky.GetComponent<GhostMove>().Calm();
-        pinky.GetComponent<GhostMove>().Calm();
-        inky.GetComponent<GhostMove>().Calm();
-        clyde.GetComponent<GhostMove>().Calm();
-        PlayerController.killstreak = 0;
-    }
+		if (clyde == null || pinky == null || inky == null || blinky == null) Debug.Log("One of ghosts are NULL");
+		if (pacman == null) Debug.Log("Pacman is NULL");
 
-    void AssignGhosts()
-    {
-        clyde = GameObject.Find("clyde");
-        pinky = GameObject.Find("pinky");
-        inky = GameObject.Find("inky");
-        blinky = GameObject.Find("blinky");
-        pacman = GameObject.Find("pacman");
+		gui = GameObject.FindObjectOfType<GameGUINavigation>();
 
-        if (clyde == null || pinky == null || inky == null || blinky == null) Debug.Log("One of ghosts are NULL");
-        if (pacman == null) Debug.Log("Pacman is NULL");
+		if (gui == null) Debug.Log("GUI Handle Null!");
+	}
 
-        gui = GameObject.FindObjectOfType<GameGUINavigation>();
+	public void LoseLife()
+	{
+		lives--;
+		gameState = GameState.Dead;
 
-        if (gui == null) Debug.Log("GUI Handle Null!");
-    }
+		// Update UI
+		UIScript ui = GameObject.FindObjectOfType<UIScript>();
+		if (ui != null && ui.lives.Count > 0)
+		{
+			Destroy(ui.lives[ui.lives.Count - 1]);
+			ui.lives.RemoveAt(ui.lives.Count - 1);
+		}
 
-    public void LoseLife()
-    {
-        lives--;
-        gameState = GameState.Dead;
+		// Check for game over
+		if (lives <= 0)
+		{
+			Debug.Log("Game Over! Saving score: " + score);
+			PlayerPrefs.SetInt("PlayerScore", score);
+			PlayerPrefs.Save();
+			score = 0; // Reset score after Game Over
+			gameState = GameState.Scores;
+			SceneManager.LoadScene("Scores");
+		}
+	}
 
-        // Update UI
-        UIScript ui = GameObject.FindObjectOfType<UIScript>();
-        if (ui != null && ui.lives.Count > 0)
-        {
-            Destroy(ui.lives[ui.lives.Count - 1]);
-            ui.lives.RemoveAt(ui.lives.Count - 1);
-        }
-
-        // Check for game over
-        if (lives <= 0)
-        {
-            Debug.Log("Game Over! Saving score: " + score);
-            PlayerPrefs.SetInt("PlayerScore", score);
-            PlayerPrefs.Save();
-            gameState = GameState.Scores;
-            SceneManager.LoadScene("Scores");
-        }
-    }
-
-    public static void DestroySelf()
-    {
-        score = 0;
-        Level = 0;
-        lives = 3;
-        Destroy(GameObject.Find("Game Manager"));
-    }
+	public static void DestroySelf()
+	{
+		score = 0; // Reset score when destroying GameManager
+		Level = 0;
+		lives = 3;
+		Destroy(GameObject.Find("Game Manager"));
+	}
 }
