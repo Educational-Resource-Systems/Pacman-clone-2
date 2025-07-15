@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
 	public static int Level = 0;
 	public static int lives = 3;
-	public static int score; // Score persists across scenes but should reset after Game Over
+	public static int score;
 
 	public enum GameState { Init, Game, Dead, Scores }
 	public static GameState gameState;
@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
 	public float scareLength;
 	private float _timeToCalm;
 	public float SpeedPerLevel;
+
+	public AudioClip beginningSound; // Assign pacman_beginning.wav in Inspector
+	private AudioSource audioSource; // Added for sound playback
 
 	private static GameManager _instance;
 
@@ -52,6 +55,8 @@ public class GameManager : MonoBehaviour
 		}
 
 		AssignGhosts();
+		audioSource = gameObject.AddComponent<AudioSource>(); // Add AudioSource
+		audioSource.playOnAwake = false; // Prevent auto-play
 	}
 
 	void Start()
@@ -72,6 +77,12 @@ public class GameManager : MonoBehaviour
 		pinky.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
 		inky.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
 		pacman.GetComponent<PlayerController>().speed += Level * SpeedPerLevel / 2;
+
+		// Play beginning sound for game scene (level 1)
+		if (SceneManager.GetActiveScene().buildIndex == 3 && beginningSound != null)
+		{
+			audioSource.PlayOneShot(beginningSound);
+		}
 	}
 
 	private void ResetVariables()
@@ -156,7 +167,6 @@ public class GameManager : MonoBehaviour
 		lives--;
 		gameState = GameState.Dead;
 
-		// Update UI
 		UIScript ui = GameObject.FindObjectOfType<UIScript>();
 		if (ui != null && ui.lives.Count > 0)
 		{
@@ -164,7 +174,6 @@ public class GameManager : MonoBehaviour
 			ui.lives.RemoveAt(ui.lives.Count - 1);
 		}
 
-		// Check for game over
 		if (lives <= 0)
 		{
 			Debug.Log("Game Over! Saving score: " + score);
@@ -178,7 +187,7 @@ public class GameManager : MonoBehaviour
 
 	public static void DestroySelf()
 	{
-		score = 0; // Reset score when destroying GameManager
+		score = 0;
 		Level = 0;
 		lives = 3;
 		Destroy(GameObject.Find("Game Manager"));
