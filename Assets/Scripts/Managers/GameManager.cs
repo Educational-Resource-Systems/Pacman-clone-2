@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
 	public AudioClip beginningSound;
 	public AudioClip chompSound;
-	public AudioClip deathSound;
+	public AudioClip deathSound; // Added for pacman_death.wav
 	private AudioSource audioSource;
 
 	private static GameManager _instance;
@@ -175,14 +175,14 @@ public class GameManager : MonoBehaviour
 			ui.lives.RemoveAt(ui.lives.Count - 1);
 		}
 
-		// Removed immediate Scores scene transition
 		if (lives <= 0)
 		{
 			Debug.Log("Game Over! Saving score: " + score);
 			PlayerPrefs.SetInt("PlayerScore", score);
 			PlayerPrefs.Save();
 			score = 0;
-			gameState = GameState.Scores; // Set state, but don't load scene yet
+			gameState = GameState.Scores;
+			SceneManager.LoadScene("Scores");
 		}
 	}
 

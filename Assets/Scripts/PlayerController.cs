@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections;
-using UnityEngine.SceneManagement; // Added for SceneManager
+using System.Collections; // Added for IEnumerator
 
 public class PlayerController : MonoBehaviour
 {
@@ -54,7 +53,7 @@ public class PlayerController : MonoBehaviour
 		_deadPlaying = true;
 		GM.PlayDeathSound(); // Play death sound
 		GetComponent<Animator>().SetBool("Die", true);
-		yield return new WaitForSeconds(1); // Death animation duration
+		yield return new WaitForSeconds(1);
 		GetComponent<Animator>().SetBool("Die", false);
 		_deadPlaying = false;
 
@@ -62,21 +61,12 @@ public class PlayerController : MonoBehaviour
 		{
 			Debug.Log("Treshold for High Score: " + SM.LowestHigh());
 			if (GameManager.score >= SM.LowestHigh())
-			{
 				GUINav.getScoresMenu();
-				yield return new WaitForSeconds(2); // Wait for high score menu
-			}
 			else
-			{
 				GUINav.H_ShowGameOverScreen();
-				yield return new WaitForSeconds(2); // Wait for Game Over message
-			}
-			SceneManager.LoadScene("Scores"); // Transition to Scores scene
 		}
 		else
-		{
 			GM.ResetScene();
-		}
 	}
 
 	void Animate()
