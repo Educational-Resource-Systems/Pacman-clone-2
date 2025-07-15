@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
 	public float SpeedPerLevel;
 
 	public AudioClip beginningSound;
-	public AudioClip chompSound; // Added for pacman_chomp.wav
+	public AudioClip chompSound;
+	public AudioClip deathSound; // Added for pacman_death.wav
 	private AudioSource audioSource;
 
 	private static GameManager _instance;
@@ -198,6 +199,14 @@ public class GameManager : MonoBehaviour
 		if (chompSound != null)
 		{
 			audioSource.PlayOneShot(chompSound);
+		}
+	}
+
+	public void PlayDeathSound()
+	{
+		if (deathSound != null)
+		{
+			audioSource.PlayOneShot(deathSound);
 		}
 	}
 }
