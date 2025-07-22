@@ -25,8 +25,10 @@ public class GameManager : MonoBehaviour
 
 	public AudioClip beginningSound;
 	public AudioClip chompSound;
-	public AudioClip deathSound; // Added for pacman_death.wav
+	public AudioClip deathSound;
 	private AudioSource audioSource;
+	private static bool isMuted = false;
+	private bool scoreSaved = false; // Prevent multiple PlayerPrefs saves
 
 	private static GameManager _instance;
 
@@ -64,6 +66,7 @@ public class GameManager : MonoBehaviour
 	void Start()
 	{
 		gameState = GameState.Init;
+		scoreSaved = false;
 	}
 
 	void OnLevelWasLoaded()
@@ -80,7 +83,7 @@ public class GameManager : MonoBehaviour
 		inky.GetComponent<GhostMove>().speed += Level * SpeedPerLevel;
 		pacman.GetComponent<PlayerController>().speed += Level * SpeedPerLevel / 2;
 
-		if (SceneManager.GetActiveScene().buildIndex == 3 && beginningSound != null)
+		if (SceneManager.GetActiveScene().buildIndex == 3 && beginningSound != null && !isMuted)
 		{
 			audioSource.PlayOneShot(beginningSound);
 		}
@@ -91,12 +94,18 @@ public class GameManager : MonoBehaviour
 		_timeToCalm = 0.0f;
 		scared = false;
 		PlayerController.killstreak = 0;
+		scoreSaved = false;
 	}
 
 	void Update()
 	{
 		if (scared && _timeToCalm <= Time.time)
 			CalmGhosts();
+
+		if (Input.GetKeyDown(KeyCode.M))
+		{
+			ToggleMute();
+		}
 	}
 
 	public void ResetScene()
@@ -159,30 +168,34 @@ public class GameManager : MonoBehaviour
 		if (pacman == null) Debug.Log("Pacman is NULL");
 
 		gui = GameObject.FindObjectOfType<GameGUINavigation>();
-
 		if (gui == null) Debug.Log("GUI Handle Null!");
 	}
 
 	public void LoseLife()
 	{
 		lives--;
+		Debug.Log("LoseLife called, Lives: " + lives);
 		gameState = GameState.Dead;
 
 		UIScript ui = GameObject.FindObjectOfType<UIScript>();
-		if (ui != null && ui.lives.Count > 0)
+		if (ui != null && ui.lives != null && ui.lives.Count > 0)
 		{
 			Destroy(ui.lives[ui.lives.Count - 1]);
 			ui.lives.RemoveAt(ui.lives.Count - 1);
 		}
-
-		if (lives <= 0)
+		else
 		{
-			Debug.Log("Game Over! Saving score: " + score);
+			Debug.LogWarning("UIScript or ui.lives is null or empty, cannot remove life UI");
+		}
+
+		if (lives <= 0 && !scoreSaved)
+		{
+			Debug.Log("Game Over! Saving score to PlayerPrefs: " + score);
 			PlayerPrefs.SetInt("PlayerScore", score);
 			PlayerPrefs.Save();
+			scoreSaved = true;
 			score = 0;
 			gameState = GameState.Scores;
-			SceneManager.LoadScene("Scores");
 		}
 	}
 
@@ -196,17 +209,46 @@ public class GameManager : MonoBehaviour
 
 	public void PlayChompSound()
 	{
-		if (chompSound != null)
+		if (chompSound != null && !isMuted)
 		{
+			Debug.Log("Playing chomp sound");
 			audioSource.PlayOneShot(chompSound);
+		}
+		else if (isMuted)
+		{
+			Debug.Log("Chomp sound muted");
+		}
+		else
+		{
+			Debug.LogWarning("chompSound is not assigned!");
 		}
 	}
 
 	public void PlayDeathSound()
 	{
-		if (deathSound != null)
+		if (deathSound != null && !isMuted)
 		{
+			Debug.Log("Playing death sound");
 			audioSource.PlayOneShot(deathSound);
 		}
+		else if (isMuted)
+		{
+			Debug.Log("Death sound muted");
+		}
+		else
+		{
+			Debug.LogWarning("deathSound is not assigned!");
+		}
+	}
+
+	public void ToggleMute()
+	{
+		isMuted = !isMuted;
+		Debug.Log("Sound muted: " + isMuted);
+	}
+
+	public bool IsMuted()
+	{
+		return isMuted;
 	}
 }

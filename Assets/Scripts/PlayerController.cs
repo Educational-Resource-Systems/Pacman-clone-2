@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections; // Added for IEnumerator
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,14 +27,32 @@ public class PlayerController : MonoBehaviour
 
 	void Start()
 	{
-		GM = GameObject.Find("Game Manager").GetComponent<GameManager>();
-		SM = GameObject.Find("Game Manager").GetComponent<ScoreManager>();
-		GUINav = GameObject.Find("UI Manager").GetComponent<GameGUINavigation>();
+		GM = GameObject.Find("Game Manager") ? GameObject.Find("Game Manager").GetComponent<GameManager>() : null;
+		SM = GameObject.Find("Game Manager") ? GameObject.Find("Game Manager").GetComponent<ScoreManager>() : null;
+		GameObject uiManager = GameObject.Find("UI Manager");
+		GUINav = uiManager ? uiManager.GetComponent<GameGUINavigation>() : null;
+		if (GUINav == null)
+		{
+			Debug.LogWarning("UI Manager or GameGUINavigation not found!");
+		}
+		if (GM == null)
+		{
+			Debug.LogWarning("Game Manager or GameManager component not found!");
+		}
+		if (SM == null)
+		{
+			Debug.LogWarning("Game Manager or ScoreManager component not found!");
+		}
 		_dest = transform.position;
 	}
 
 	void FixedUpdate()
 	{
+		if (GM == null)
+		{
+			Debug.LogWarning("GameManager is null in FixedUpdate!");
+			return;
+		}
 		switch (GameManager.gameState)
 		{
 		case GameManager.GameState.Game:
@@ -43,7 +62,10 @@ public class PlayerController : MonoBehaviour
 
 		case GameManager.GameState.Dead:
 			if (!_deadPlaying)
-				StartCoroutine("PlayDeadAnimation");
+			{
+				Debug.Log("Starting PlayDeadAnimation, Lives: " + GameManager.lives);
+				StartCoroutine(PlayDeadAnimation());
+			}
 			break;
 		}
 	}
@@ -51,29 +73,88 @@ public class PlayerController : MonoBehaviour
 	IEnumerator PlayDeadAnimation()
 	{
 		_deadPlaying = true;
-		GM.PlayDeathSound(); // Play death sound
-		GetComponent<Animator>().SetBool("Die", true);
-		yield return new WaitForSeconds(1);
-		GetComponent<Animator>().SetBool("Die", false);
+		Debug.Log("Starting death animation");
+		if (GM != null)
+		{
+			GM.PlayDeathSound();
+		}
+		else
+		{
+			Debug.LogWarning("GameManager is null, cannot play death sound");
+		}
+		Animator animator = GetComponent<Animator>();
+		if (animator != null)
+		{
+			animator.SetBool("Die", true);
+			yield return new WaitForSeconds(1); // Death animation duration
+			animator.SetBool("Die", false);
+			Debug.Log("Death animation complete");
+		}
+		else
+		{
+			Debug.LogWarning("Animator component not found, skipping animation");
+			yield return new WaitForSeconds(1); // Fallback delay
+		}
 		_deadPlaying = false;
 
 		if (GameManager.lives <= 0)
 		{
-			Debug.Log("Treshold for High Score: " + SM.LowestHigh());
-			if (GameManager.score >= SM.LowestHigh())
-				GUINav.getScoresMenu();
+			Debug.Log("Game Over! Checking high score: " + (SM != null ? SM.LowestHigh().ToString() : "ScoreManager null"));
+			if (GUINav != null)
+			{
+				if (SM != null && GameManager.score >= SM.LowestHigh())
+				{
+					Debug.Log("Showing high score menu and submitting score");
+					GUINav.getScoresMenu();
+					// Assume getScoresMenu submits score
+				}
+				else
+				{
+					Debug.Log("Showing Game Over screen");
+					GUINav.H_ShowGameOverScreen();
+					// Submit score for non-high scores
+					string playerName = PlayerPrefs.GetString("PlayerName", "");
+					string playerEmail = PlayerPrefs.GetString("PlayerEmail", "");
+					int playerScore = PlayerPrefs.GetInt("PlayerScore", 0);
+					if (!string.IsNullOrEmpty(playerName) && !string.IsNullOrEmpty(playerEmail) && SM != null)
+					{
+						Debug.Log("Submitting non-high score");
+						StartCoroutine(SM.SubmitScore(playerName, playerEmail, playerScore));
+					}
+				}
+				yield return new WaitForSeconds(2); // Wait for UI display
+			}
 			else
-				GUINav.H_ShowGameOverScreen();
+			{
+				Debug.LogWarning("GUINav is null, skipping UI display");
+				yield return new WaitForSeconds(1); // Fallback delay
+			}
+			Debug.Log("Loading Scores scene");
+			SceneManager.LoadScene("Scores");
 		}
 		else
-			GM.ResetScene();
+		{
+			Debug.Log("Resetting scene");
+			if (GM != null)
+			{
+				GM.ResetScene();
+			}
+			else
+			{
+				Debug.LogWarning("GameManager is null, cannot reset scene");
+			}
+		}
 	}
 
 	void Animate()
 	{
 		Vector2 dir = _dest - (Vector2)transform.position;
-		GetComponent<Animator>().SetFloat("DirX", dir.x);
-		GetComponent<Animator>().SetFloat("DirY", dir.y);
+		Animator animator = GetComponent<Animator>();
+		if (animator != null)
+		{
+			animator.SetFloat("DirX", dir.x);
+			animator.SetFloat("DirY", dir.y);
+		}
 	}
 
 	bool Valid(Vector2 direction)
@@ -81,20 +162,28 @@ public class PlayerController : MonoBehaviour
 		Vector2 pos = transform.position;
 		direction += new Vector2(direction.x * 0.45f, direction.y * 0.45f);
 		RaycastHit2D hit = Physics2D.Linecast(pos + direction, pos);
-		return hit.collider.name == "pacdot" || (hit.collider == GetComponent<Collider2D>());
+		return hit.collider != null && (hit.collider.name == "pacdot" || hit.collider == GetComponent<Collider2D>());
 	}
 
 	public void ResetDestination()
 	{
 		_dest = new Vector2(15f, 11f);
-		GetComponent<Animator>().SetFloat("DirX", 1);
-		GetComponent<Animator>().SetFloat("DirY", 0);
+		Animator animator = GetComponent<Animator>();
+		if (animator != null)
+		{
+			animator.SetFloat("DirX", 1);
+			animator.SetFloat("DirY", 0);
+		}
 	}
 
 	void ReadInputAndMove()
 	{
 		Vector2 p = Vector2.MoveTowards(transform.position, _dest, speed);
-		GetComponent<Rigidbody2D>().MovePosition(p);
+		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		if (rb != null)
+		{
+			rb.MovePosition(p);
+		}
 
 		if (Input.GetAxis("Horizontal") > 0) _nextDir = Vector2.right;
 		if (Input.GetAxis("Horizontal") < 0) _nextDir = -Vector2.right;
