@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
 			ReadInputAndMove();
 			Animate();
 			break;
-
 		case GameManager.GameState.Dead:
 			if (!_deadPlaying)
 			{
@@ -82,12 +81,21 @@ public class PlayerController : MonoBehaviour
 		{
 			Debug.LogWarning("GameManager is null, cannot play death sound");
 		}
+
 		Animator animator = GetComponent<Animator>();
 		if (animator != null)
 		{
 			animator.SetBool("Die", true);
 			yield return new WaitForSeconds(1); // Death animation duration
-			animator.SetBool("Die", false);
+			if (animator.GetCurrentAnimatorStateInfo(0).IsName("Die"))
+			{
+				Debug.LogWarning("Forcing exit from Die state");
+				animator.Play("Idle"); // Replace with your default state
+			}
+			else
+			{
+				animator.SetBool("Die", false);
+			}
 			Debug.Log("Death animation complete");
 		}
 		else
@@ -95,7 +103,6 @@ public class PlayerController : MonoBehaviour
 			Debug.LogWarning("Animator component not found, skipping animation");
 			yield return new WaitForSeconds(1); // Fallback delay
 		}
-		_deadPlaying = false;
 
 		if (GameManager.lives <= 0)
 		{
@@ -104,22 +111,24 @@ public class PlayerController : MonoBehaviour
 			{
 				if (SM != null && GameManager.score >= SM.LowestHigh())
 				{
-					Debug.Log("Showing high score menu and submitting score");
-					GUINav.getScoresMenu();
-					// Assume getScoresMenu submits score
+					Debug.Log("Showing high score menu (assuming score submission)");
+					GUINav.getScoresMenu(); // Assume this submits score
 				}
 				else
 				{
-					Debug.Log("Showing Game Over screen");
+					Debug.Log("Showing Game Over screen and submitting non-high score");
 					GUINav.H_ShowGameOverScreen();
-					// Submit score for non-high scores
 					string playerName = PlayerPrefs.GetString("PlayerName", "");
 					string playerEmail = PlayerPrefs.GetString("PlayerEmail", "");
 					int playerScore = PlayerPrefs.GetInt("PlayerScore", 0);
 					if (!string.IsNullOrEmpty(playerName) && !string.IsNullOrEmpty(playerEmail) && SM != null)
 					{
 						Debug.Log("Submitting non-high score");
-						StartCoroutine(SM.SubmitScore(playerName, playerEmail, playerScore));
+						yield return StartCoroutine(SM.SubmitScore(playerName, playerEmail, playerScore));
+					}
+					else
+					{
+						Debug.LogWarning("Cannot submit non-high score: Invalid PlayerPrefs data or ScoreManager null");
 					}
 				}
 				yield return new WaitForSeconds(2); // Wait for UI display
@@ -129,8 +138,25 @@ public class PlayerController : MonoBehaviour
 				Debug.LogWarning("GUINav is null, skipping UI display");
 				yield return new WaitForSeconds(1); // Fallback delay
 			}
-			Debug.Log("Loading Scores scene");
-			SceneManager.LoadScene("Scores");
+
+			if (GM != null)
+			{
+				GM.EndGame(); // Transition to Scores state
+			}
+			else
+			{
+				Debug.LogWarning("GameManager is null, cannot call EndGame");
+			}
+
+			Debug.Log("Attempting to load Scores scene");
+			try
+			{
+				SceneManager.LoadScene("Scores");
+			}
+			catch (Exception e)
+			{
+				Debug.LogError("Failed to load Scores scene: " + e.Message);
+			}
 		}
 		else
 		{
@@ -144,6 +170,8 @@ public class PlayerController : MonoBehaviour
 				Debug.LogWarning("GameManager is null, cannot reset scene");
 			}
 		}
+
+		_deadPlaying = false;
 	}
 
 	void Animate()
