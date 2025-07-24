@@ -60,7 +60,7 @@ public class NameInputManager : MonoBehaviour
 			feedbackText.text = "Info saved! Loading menu...";
 		Debug.Log(string.Format("Saved name: {0}, email: {1}", playerName, playerEmail));
 
-		SceneManager.LoadScene("Menu");
+		SceneManager.LoadScene("game");
 	}
 
 	bool IsValidEmail(string email)

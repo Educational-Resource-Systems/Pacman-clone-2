@@ -17,7 +17,7 @@ public class Pacdot : MonoBehaviour
 			GameObject[] pacdots = GameObject.FindGameObjectsWithTag("pacdot");
 			Destroy(gameObject);
 
-			GM.PlayChompSound(); // Play chomp sound via GameManager
+
 
 			if (pacdots.Length == 1)
 			{

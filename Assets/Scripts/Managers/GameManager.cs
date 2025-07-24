@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
 	public float SpeedPerLevel;
 
 	public AudioClip beginningSound;
-	public AudioClip chompSound;
 	public AudioClip deathSound; // Added for pacman_death.wav
 	private AudioSource audioSource;
 
@@ -194,13 +193,7 @@ public class GameManager : MonoBehaviour
 		Destroy(GameObject.Find("Game Manager"));
 	}
 
-	public void PlayChompSound()
-	{
-		if (chompSound != null)
-		{
-			audioSource.PlayOneShot(chompSound);
-		}
-	}
+
 
 	public void PlayDeathSound()
 	{

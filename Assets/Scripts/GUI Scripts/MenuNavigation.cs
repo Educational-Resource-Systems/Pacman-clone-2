@@ -15,7 +15,7 @@ public class MenuNavigation : MonoBehaviour {
 	
 	public void Play()
 	{
-		Application.LoadLevel("game");
+		Application.LoadLevel("NameInputScene");
 	}
 	
 	public void HighScores()
