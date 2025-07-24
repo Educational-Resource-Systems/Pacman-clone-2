@@ -207,7 +207,7 @@ public class GameManager : MonoBehaviour
 	{
 		gameState = GameState.Scores;
 		Debug.Log("EndGame called, transitioning to Scores state");
-		SceneManager.LoadScene("Scores"); // *** Also changed this to "Scores" ***
+		SceneManager.LoadScene("scores"); // *** Also changed this to "Scores" ***
 	}
 
 	public static void DestroySelf()
