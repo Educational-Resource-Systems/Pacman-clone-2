@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 	public float SpeedPerLevel;
 
 	public AudioClip beginningSound;
-	public AudioClip chompSound;
+	public AudioClip chompSound; // This variable can remain, but it's no longer used
 	public AudioClip deathSound;
 	private AudioSource audioSource;
 	private static bool isMuted = false;
@@ -199,7 +199,6 @@ public class GameManager : MonoBehaviour
 			PlayerPrefs.Save();
 			scoreSaved = true;
 			score = 0;
-			// Do not set gameState = GameState.Scores here
 		}
 	}
 
@@ -207,7 +206,7 @@ public class GameManager : MonoBehaviour
 	{
 		gameState = GameState.Scores;
 		Debug.Log("EndGame called, transitioning to Scores state");
-		SceneManager.LoadScene("scores"); // *** Also changed this to "Scores" ***
+		SceneManager.LoadScene("scores");
 	}
 
 	public static void DestroySelf()
@@ -217,23 +216,6 @@ public class GameManager : MonoBehaviour
 		lives = 3;
 		GameObject gm = GameObject.Find("Game Manager");
 		if (gm != null) Destroy(gm);
-	}
-
-	public void PlayChompSound()
-	{
-		if (chompSound != null && !isMuted)
-		{
-			Debug.Log("Playing chomp sound");
-			audioSource.PlayOneShot(chompSound);
-		}
-		else if (isMuted)
-		{
-			Debug.Log("Chomp sound muted");
-		}
-		else
-		{
-			Debug.LogWarning("chompSound is not assigned!");
-		}
 	}
 
 	public void PlayDeathSound()
