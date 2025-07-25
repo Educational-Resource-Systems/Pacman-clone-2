@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private string TopScoresURL = "https://ers-dev.com/ERS/_pacman/build5/topscores.php";
+    private string TopScoresURL = "https://ers-dev.com/ERS/_pacman/build5/topscores-2.php";
     private string username;
     private int _highscore = 99999;
     private int _lowestHigh = 99999;
